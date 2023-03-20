@@ -1,15 +1,14 @@
-
 <?php
 
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\SMTP;
 use PHPMailer\PHPMailer\Exception;
-require 'vendor/autoload.php';
-require './EmailServerInterface.php';
+require 'autoload.php';
+require 'EmailServerInterface.php';
 //Load Composer's autoloader
 
     class MyEmailServer implements EmailServerInterface {
-        public function sendEmail($email, $name, $message) { //$email, $name, $message.. $to, $subject, $message
+        public function sendEmail($to, $subject, $message) { //$email, $name, $message.. $to, $subject, $message
             // Implementation to send email using MyEmailServer
             //Import PHPMailer classes into the global namespace
             //These must be at the top of your script, not inside a function
@@ -25,13 +24,13 @@ require './EmailServerInterface.php';
                 $mail->Host       = 'smtp.gmail.com';   //.e.tlu.edu.vn                  //Set the SMTP server to send through
                 $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
                 $mail->Username   = 'nguyenmaihdb@gmail.com';                     //SMTP username
-                $mail->Password   = 'rsrgstqksjaeimlb';                               //SMTP password
+                $mail->Password   = 'qzllbiffjzljllck';                               //SMTP password
                 $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;            //Enable implicit TLS encryption
                 $mail->Port       = 465;                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
             
                 //Recipients
                 $mail->setFrom('from@example.com', 'Mailer');
-                $mail->addAddress('nguyenhoangbaohdb@gmail.com', 'Hiiiii');     //Add a recipient
+                $mail->addAddress('nguyenhoangbaohdb@gmail.com', 'Hi');     //Add a recipient
 
             
                 //Attachments
